@@ -1,5 +1,5 @@
-from typing import Union
 from fastapi import FastAPI
+from mangum import Mangum
 
 app = FastAPI()
 
@@ -11,3 +11,5 @@ async def root():
 @app.get("/search/")
 async def search(token: str):
     return {"message": f"Search results for token: {token}"}
+
+handler = Mangum(app)
