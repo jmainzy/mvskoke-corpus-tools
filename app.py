@@ -1,9 +1,13 @@
-from flask import Flask
-from flask import render_template
+from fastapi import FastAPI
 
-app = Flask(__name__)
+app = FastAPI()
 
 
-@app.route("/")
-def hello_world():
-    return render_template("index.html")
+@app.get("/")
+async def root():
+    return {"message": "Hello World"}
+
+
+@app.get("/search/")
+async def search(token: str):
+    return {"message": f"Search results for token: {token}"}
