@@ -1,8 +1,13 @@
 [build]
-  command = "pip install -r requirements.txt && cd mvskoke-demo-site && npm run build --prod"
-  publish = "dist/mvskoke-demo-site"
+  command = "pip install -r requirements.txt && cd mvskoke-demo-site && ng build"
+  publish = "mvskoke-demo-site/dist/mvskoke-demo-site"
 
 [dev]
   command = "uvicorn app:app --reload"
   port = 8000
   targetPort = 8000
+
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
