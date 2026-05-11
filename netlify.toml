@@ -1,6 +1,6 @@
 [build]
-  command = "pip install -r requirements.txt && cd mvskoke-demo-site && ng build"
-  publish = "mvskoke-demo-site/dist/mvskoke-demo-site"
+  command = "pip install -r requirements.txt && ng build"
+  publish = "dist/mvskoke-demo-site"
 
 [dev]
   command = "uvicorn app:app --reload"
