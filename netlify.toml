@@ -1,8 +1,13 @@
 [build]
   command = "pip install -r requirements.txt && ng build"
-  publish = "dist/mvskoke-demo-site"
+  publish = "dist/mvskoke-demo-site/browser"
 
 [dev]
   command = "uvicorn app:app --reload"
   port = 8000
   targetPort = 8000
+
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
