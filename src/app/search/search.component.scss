@@ -1,0 +1,250 @@
+.results-page {
+    min-height: 100vh;
+    padding: 1.5rem;
+    background:
+        radial-gradient(circle at top left, rgba(245, 158, 11, 0.22), transparent 34%),
+        radial-gradient(circle at bottom right, rgba(15, 23, 42, 0.16), transparent 40%),
+        linear-gradient(160deg, #f8fafc 0%, #eef2ff 50%, #f1f5f9 100%);
+}
+
+.results-shell {
+    width: min(100%, 68rem);
+    margin: 0 auto;
+    display: grid;
+    gap: 1rem;
+}
+
+.results-hero,
+.results-panel {
+    border-radius: 1.5rem;
+    background: rgba(255, 255, 255, 0.92);
+    box-shadow: 0 1.5rem 4rem rgba(15, 23, 42, 0.16);
+    backdrop-filter: blur(12px);
+}
+
+.results-hero {
+    padding: 2rem;
+}
+
+.eyebrow {
+    margin: 0 0 0.5rem;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: #b45309;
+}
+
+h1 {
+    margin: 0;
+    font-size: clamp(2rem, 4vw, 3.5rem);
+    line-height: 1.05;
+    color: #0f172a;
+}
+
+.summary {
+    margin: 0.9rem 0 0;
+    max-width: 42rem;
+    color: #475569;
+    font-size: 1.05rem;
+}
+
+.results-search {
+    margin-top: 1.25rem;
+    display: flex;
+    gap: 0.75rem;
+}
+
+.results-search input {
+    flex: 1;
+    min-width: 0;
+    padding: 0.95rem 1rem;
+    border: 1px solid #cbd5e1;
+    border-radius: 999px;
+    font: inherit;
+    color: #0f172a;
+    background: #fff;
+    outline: none;
+}
+
+.results-search input::placeholder {
+    color: #94a3b8;
+}
+
+.results-search input:focus {
+    border-color: #0f172a;
+    box-shadow: 0 0 0 4px rgba(15, 23, 42, 0.1);
+}
+
+.results-search button {
+    padding: 0.95rem 1.4rem;
+    border: 0;
+    border-radius: 999px;
+    background: #0f172a;
+    color: #fff;
+    font: inherit;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.results-search button:hover {
+    background: #111c33;
+}
+
+.results-actions {
+    margin-top: 1.5rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+}
+
+.primary-action,
+.secondary-action {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.75rem 1rem;
+    border-radius: 999px;
+    text-decoration: none;
+    font-weight: 600;
+    transition:
+        transform 0.15s ease,
+        background-color 0.15s ease,
+        border-color 0.15s ease;
+}
+
+.primary-action {
+    background: #0f172a;
+    color: #fff;
+}
+
+.secondary-action {
+    border: 1px solid #cbd5e1;
+    background: #fff;
+    color: #0f172a;
+}
+
+.primary-action:hover,
+.secondary-action:hover {
+    transform: translateY(-1px);
+}
+
+.secondary-action:hover {
+    border-color: #94a3b8;
+    background: #f8fafc;
+}
+
+.results-panel {
+    padding: 1.5rem;
+}
+
+.results-meta {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    padding-bottom: 1rem;
+    color: #64748b;
+    font-size: 0.875rem;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+.result-card {
+    padding: 1.25rem 0;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+.result-card:last-child {
+    border-bottom: 0;
+    padding-bottom: 0;
+}
+
+.result-card__header {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 0.75rem;
+}
+
+.result-card h2 {
+    margin: 0;
+    font-size: 1.25rem;
+    color: #0f172a;
+}
+
+.location {
+    margin: 0;
+    color: #64748b;
+    font-size: 0.875rem;
+}
+
+.excerpt {
+    margin: 0.75rem 0 1rem;
+    color: #334155;
+}
+
+.tags {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.tags li {
+    padding: 0.45rem 0.75rem;
+    border-radius: 999px;
+    background: #f8fafc;
+    color: #334155;
+    font-size: 0.875rem;
+    border: 1px solid #e2e8f0;
+}
+
+@media (max-width: 640px) {
+    .results-page {
+        padding: 1rem;
+    }
+
+    .results-hero,
+    .results-panel {
+        border-radius: 1.25rem;
+    }
+
+    .results-hero,
+    .results-panel {
+        padding: 1.25rem;
+    }
+
+    .results-meta {
+        flex-direction: column;
+    }
+
+    .results-actions {
+        flex-direction: column;
+    }
+
+    .results-search {
+        flex-direction: column;
+    }
+
+    .results-search button {
+        width: 100%;
+    }
+
+    .primary-action,
+    .secondary-action {
+        width: 100%;
+    }
+}
+
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}

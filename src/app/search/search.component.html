@@ -1,0 +1,37 @@
+<main class="results-page">
+    <section class="results-shell" aria-label="Search results">
+        <header class="results-hero">
+            <p class="eyebrow">Search</p>
+            <h1>{{ resultHeading }}</h1>
+            <div class="results-actions">
+                <a class="primary-action" routerLink="/">Home</a>
+                <a class="secondary-action" routerLink="/speech-recognition">Speech recognition demo</a>
+            </div>
+            <form class="results-search" action="/search" method="get">
+                <label class="sr-only" for="results-search-input">Search</label>
+                <input id="results-search-input" name="query" type="search" [value]="searchTerm"
+                    placeholder="Search again" />
+                <button type="submit">Search</button>
+            </form>
+            <p class="summary">{{ resultSummary }}</p>
+        </header>
+
+        <section class="results-panel" aria-label="Result list">
+            <div class="results-meta">
+                <span>{{ results.length }} sample matches</span>
+                <span>Corpus preview</span>
+            </div>
+
+            <article class="result-card" *ngFor="let result of results">
+                <div class="result-card__header">
+                    <h2>{{ result.title }}</h2>
+                    <p class="location">{{ result.location }}</p>
+                </div>
+                <p class="excerpt">{{ result.excerpt }}</p>
+                <ul class="tags" aria-label="Result tags">
+                    <li *ngFor="let tag of result.tags">{{ tag }}</li>
+                </ul>
+            </article>
+        </section>
+    </section>
+</main>
