@@ -35,7 +35,7 @@ joblib==1.5.3
 keras==3.14.1
 libclang==18.1.1
 mangum==0.21.0
-markdown-it-py==4.0.0
+markdown-it-py==4.2.0
 MarkupSafe==3.0.3
 mdurl==0.1.2
 ml_dtypes==0.5.4
