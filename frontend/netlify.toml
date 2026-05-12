@@ -1,6 +1,6 @@
 [build]
   command = "pip install -r requirements.txt && ng build"
-  publish = "dist/mvskoke-demo-site/browser"
+  publish = "frontend/dist/mvskoke-demo-site/browser"
 
 [dev]
   command = "uvicorn app:app --reload"
