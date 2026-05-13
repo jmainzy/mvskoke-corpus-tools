@@ -5,8 +5,8 @@ from models import SearchResult
 
 import os
 
-memory = Memory(chunking_strategy={'mode':'sliding_window', 'window_size':20, 'overlapp':8})
 data_dir = "./data"
+memory = Memory(chunking_strategy={'mode':'sliding_window', 'window_size':20, 'overlapp':8})
 logger = logging.getLogger()
 logging.basicConfig(stream=sys.stdout, level=logging.DEBUG)
 
@@ -17,10 +17,13 @@ def load_corpus():
         if filename.endswith('.txt'):
             with open(os.path.join(data_dir, filename), 'r', encoding='utf-8') as f:
                 content = f.read()
-                memory.save(content, [{"filename": filename}])
-    logger.info("Corpus loading complete")
+                def is_empty(self):
+                    raise NotImplementedError
+
 
 def search(query: str) -> list[SearchResult]:
+    if memory.is_empty():
+        load_corpus()
     logger.info(f"Received search query: {query}")
     results = memory.search(query)
     logger.info(f"Search results: {results}")

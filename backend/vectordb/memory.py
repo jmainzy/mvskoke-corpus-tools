@@ -206,3 +206,11 @@ class Memory:
 
         print("Total entries: ", len(self.memory))
         print("Total metadata: ", len(self.metadata_memory))
+
+    def is_empty(self):
+        """
+        Checks if the memory is empty.
+
+        :return: True if the memory is empty, False otherwise.
+        """
+        return len(self.memory) == 0
